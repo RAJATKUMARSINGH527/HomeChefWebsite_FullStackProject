@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChefKart - HomeChef</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            color: white;
+            background-color: black;
+            padding: 1rem 0;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        header .logo {
+            margin-right: auto;
+        }
+
+        header .logo img {
+            position: relative;
+            height: 50px;
+            width: 160px;
+        }
+
+        header .nav-links {
+            list-style-type: none;
+        }
+
+        header .nav-links li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        header .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 600px;
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 23%;
+            transform: translate(-50%, -50%);
+        }
+
+        .title p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 35px;
+            font-weight: 700;
+            line-height: 55px;
+            color: rgb(255, 255, 255);
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            color: #FF961F;
+            font-size: 50px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .button {
+            display: inline-block;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 0.7rem 1.5rem;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #e67e22;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: Cera Pro, HelveticaNeue, Helvetica Neue, HelveticaNeueRoman, HelveticaNeue-Roman, Helvetica Neue Roman, TeXGyreHerosRegular, Helvetica, Tahoma, Geneva, Arial, sans-serif;
+        }
+
+        #plans {
+            padding: 3rem 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        #plans h2 {
+            font-size: 3rem;
+            margin-bottom: 3.5rem;
+            color: #1B2534;
+        }
+
+        #plans .heading {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .plan-cards {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .plan-cards .card {
+            background-color: #52ACFF;
+            background-image: linear-gradient(180deg, #52ACFF 25%, #FFE32C 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .plan-cards .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .plan-cards .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .plan-cards .card p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .plan-cards .card button {
+            padding: 11.2px 145px;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: #FF961F;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1em;
+            border-top: 5px solid #ffcc00;
+        }
+
+        strong {
+            font-weight: 700;
+            font-size: xx-large;
+        }
+
+        .why-choose {
+            padding: 3rem 2rem;
+         
+            background-image: linear-gradient( 135deg, #FFF886 10%, #F072B6 100%);;
+
+
+            text-align: center;
+        }
+
+        .why-choose h2 {
+            margin-bottom: 2rem;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .reasons {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            
+        }
+
+        .reason {
+            width: 22%;
+            text-align: center;
+            padding: 1rem;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+
+        .reason img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .how-it-works {
+            padding: 3rem 2rem;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            margin-bottom: 2rem;
+            font-size: 3rem;
+            color: #331B3B;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+
+        .step {
+            width: 22%;
+            text-align: center;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .step img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+        b{
+            color:#fc8a08;
+        }
+        hr{
+            border: solid 1px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <!-- Logo Image -->
+                <img src="https://chefkart-strapi-media.s3.ap-south-1.amazonaws.com/Logo_White_9fd26be901.webp" alt="ChefKart Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#plans">Our Services</a></li>
+                <li><a href="#chefProfile">Chef Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="https://www.peru.travel/Contenido/Evento/Imagen/en/765/1.1/Evento/chef-desktop.jpg" alt="chefkart img">
+            <div class="title">
+                <h1>Welcome to Our Service</h1>
+                <p>Most Trusted Platform for <br> At-Home Cooking Services</p>
+                <a href="plans.html" class="button">Find your perfect cook</a>
+            </div>
+        </section>
+
+        <section id="plans">
+            <h2>Discover your perfect service</h2>
+            <div class="plan-cards">
+                <div class="card">
+                    <h2 class="heading">Chefit: One-time cook</h2>
+                    <p>Get a professional cook for one-time within 60 minutes</p>
+                    <hr>
+                    <br>
+                    <p>✔️ Trained & Verified Cooks</p>
+                    <p>✔️ Healthy & Hygienic Food</p>
+                    <p>✔️ Tailored to Your Taste</p>
+                    <p>✔️ Quick Service</p>
+                    <p>Starting from <br><strong>₹299 /visit</strong></p>
+                    <button>Book Now</button>
+                </div>
+
+                <div class="card">
+                    <h2 class="heading">Cook for a Month</h2>
+                    <p>Get a trained & verified monthly cook for your home</p>
+                    <hr>
+                    <br>
+                    <p>✔️ 30 Days of Assured Service</p>
+                    <p>✔️ Multi-Cuisine Expert Cooks</p>
+                    <p>✔️ Effortless Replacement</p>
+                    <p>✔️ Quick Service</p>
+                    <p>Starting from <br><strong>₹5000 /month</strong></p>
+                    <button>Book Now</button>
+                </div>
+
+                <div class="card">
+                    <h2 class="heading">Chef for Party</h2>
+                    <p>Professional party chefs to elevate your party experience</p>
+                    <hr>
+                    <br>
+                    <p>✔️ Multi-Cuisine Professionals</p>
+                    <p>✔️ Customisable Menu</p>
+                    <p>✔️ Prompt Service</p>
+                    <p>✔️ Hassle-Free Experience</p>
+                    <p>Starting from <br><strong>₹2000 /month</strong></p>
+                    <button>Book Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose">
+            <h2>Why Choose <b>ChefKart?</b></h2>
+            <div class="reasons">
+                <div class="reason">
+                    <img src="https://chefkart-strapi-media.s3.ap-south-1.amazonaws.com/professional_cooks_ec13508556.svg" alt="Professional Cooks">
+                    <hr>
+                    <h3>Professional Cooks</h3>
+                    
+                </div>
+                <div class="reason">
+                    <img src="https://chefkart-strapi-media.s3.ap-south-1.amazonaws.com/easy_booking_92fea7ca01.svg" alt="Easy Booking">
+                    <hr>
+                    <h3>Easy Booking</h3>
+                   
+                </div>
+                <div class="reason">
+                    <img src="https://chefkart-strapi-media.s3.ap-south-1.amazonaws.com/timely_service_3a6f9d9ebe.svg" alt="Timely Service">
+                    <hr>
+                    <h3>Timely Service</h3>
+                  
+                </div>
+                <div class="reason">
+                    <img src="https://chefkart-strapi-media.s3.ap-south-1.amazonaws.com/prompt_support_ca831687ac.svg" alt="Prompt Support">
+                    <hr>
+                    <h3>Prompt Support</h3>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="https://chefkart-strapi-media.s3.ap-south-1.amazonaws.com/Register_on_app_4372ed1276.svg" alt="Register on Website">
+                    <h3>1. Register on Website</h3>
+                    <p>Download the HomeChef Website and register yourself</p>
+                </div>
+                <div class="step">
+                    <img src="https://chefkart-strapi-media.s3.ap-south-1.amazonaws.com/select_your_service_7ba59dddd5.svg" alt="Select Your Service">
+                    <h3>2. Select Your Service</h3>
+                    <p>Choose from range of available services</p>
+                </div>
+        
+                <div class="step">
+                    <img src="https://chefkart-strapi-media.s3.ap-south-1.amazonaws.com/make_payment_50309d2915.svg" alt="Make Payment">
+                    <h3>3. Fill Details & Pay</h3>
+                    <p>Share your preferences and complete the payment</p>
+                </div>
+
+                <div class="step">
+                    <img src="https://chefkart-strapi-media.s3.ap-south-1.amazonaws.com/Get_a_cook_b0e201f46a.svg" alt="Get a Cook">
+                    <h3>4. Get a Cook</h3>
+                    <p>Get a professionally-trained and trusted cook on time</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024  HomeChef Website By Rajat Kumar Singh. All rights reserved.
+    </footer>
+</body>
+</html>

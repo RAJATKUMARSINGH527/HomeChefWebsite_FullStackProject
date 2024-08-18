@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeChef Promotion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: antiquewhite;
+            padding: 1em;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        nav .logo {
+            margin-right: 20px;
+        }
+
+        nav .logo img {
+            height: 44px;
+            width: 105px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        nav ul li {
+            margin-left: 1em;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav ul li a:hover {
+           color: #007bff;
+        }
+
+        .promotion {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            margin-bottom: 2em;
+            background: url(https://media.blueapron.com/assets/signup/landing/background-landing-signup.jpg?quality=80&width=1440) no-repeat scroll 50%;
+            background-size: cover;
+            margin: 0 auto;
+            padding: 67px 0;
+            max-width: 1440px;
+        }
+
+        .how-it-works {
+            flex: 1;
+            max-width: 500px;
+            padding: 2em;
+            background-color: whitesmoke;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .how-it-works h2 {
+            color: #007bff;
+            margin-bottom: 1em;
+        }
+
+        .how-it-works .feature-box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1em;
+            background-color: white;
+        }
+
+        .how-it-works .feature-box img {
+            max-width: 100px;
+            height: auto;
+            margin-right: 1em;
+        }
+
+        .how-it-works .feature-box p {
+            margin: 0;
+        }
+
+        .signup-section {
+            flex: 1;
+            max-width: 500px;
+            background-color: whitesmoke;
+            padding: 2em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+        }
+
+        .signup-section form {
+            width: 100%;
+        }
+
+        .signup-section form label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .signup-section form input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 0.75em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 1em;
+        }
+
+        .signup-section form .btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            padding: 12px 24px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1em;
+            margin-bottom: 1em; 
+        }
+
+        .signup-section form .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .signup-options {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 1em;
+        }
+
+        .signup-options .google-signup {
+            background-color: whitesmoke;
+            color: black;
+            border: solid gray 1px;
+            border-radius: 24px;
+            padding: 12px 24px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .google-signup .google-icon {
+            height: 20px;
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .or {
+            text-align: center;
+            color: rgb(101, 96, 96);
+            font-weight: 500;
+            margin-bottom: 1em; 
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: #fff;
+            font-size: 1em;
+            border-top: 5px solid #ffcc00;
+        }
+
+       
+        .how-it-works {
+            flex: 1;
+            max-width: 500px;
+            padding: 2em;
+        }
+
+        .how-it-works p {
+            margin-bottom: 1em;
+        }
+
+        .features {
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        .features h2 {
+            color: #007bff;
+            margin-bottom: 1em;
+        }
+
+        .features .feature-box {
+            display: inline-block;
+            width: 30%;
+            padding: 1em;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 0 1em;
+            vertical-align: top;
+        }
+
+        .features .feature-box img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 0.5em;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        
+        .signupBox{
+            
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background:whitesmoke;
+            max-width: 830px;
+            padding: 40px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .siup{
+            font-size: large;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="./images/HomeChefImg.png" alt="HomeChef Logo"></a>
+            </div>
+            <ul>
+                <li><a href="#plans">Plans</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="#checkout">Checkout</a></li>
+                <li><a href="#choose-meals">Choose Meals</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="promotion">
+
+
+            <div class="signupBox">
+                <div class="how-it-works">
+                    <h2>How It Works</h2>
+                    <div class="feature-box">
+                        <img src="path-to-image1.jpg" alt="Choose your Meals">
+                        <p><strong>Choose your Meals:</strong> Our chef-designed recipes include balanced Mediterranean meals, quick one-pan dinners, and top-rated customer favorites.</p>
+                    </div>
+                    <div class="feature-box">
+                        <img src="path-to-image2.jpg" alt="Unpack your Box">
+                        <p><strong>Unpack your box:</strong> We guarantee the freshness of all our ingredients and deliver them in an insulated box right to your door.</p>
+                    </div>
+                    <div class="feature-box">
+                        <img src="path-to-image3.jpg" alt="Create Magic">
+                        <p><strong>Create Magic:</strong> Following our step-by-step instructions you'll experience the magic of cooking recipes that our chefs create with your family's tastes in mind.</p>
+                    </div>
+                </div>
+
+                <div class="signup-section">
+                    <h2 class="siup">Already have an account? <a href="signup.html">Sign in</a></h2>
+                    <form id="signup-form">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        <button class=btn type="submit">Continue</button>
+                        <p class="or">OR</p>
+                        <div class="signup-options">
+                            <button type="button" class="google-signup">
+                                <img src="https://kgo.googleusercontent.com/profile_vrt_raw_bytes_1587515358_10512.png" alt="Google Logo" class="google-icon">
+                                Sign up with Google
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>  
+       
+        </section>
+
+        <section class="features">
+            <h2>Why Choose HomeChef?</h2>
+            <div class="feature-box">
+                <img src="path-to-image1.jpg" alt="No Commitment">
+                <p><strong>No Commitment:</strong> Receive your delivery whenever it's convenient, and skipping or canceling is easy.</p>
+            </div>
+            <div class="feature-box">
+                <img src="path-to-image2.jpg" alt="Personalized Menus">
+                <p><strong>Personalized Menus:</strong> Select from our Signature or Signature for 4 plans. Tell us your dietary preferences and we'll personalize the menus you receive.</p>
+            </div>
+            <div class="feature-box">
+                <img src="path-to-image3.jpg" alt="Convenient Delivery">
+                <p><strong>Convenient Delivery:</strong> Ingredients are carefully packaged in a refrigerated box so food stays fresh even if you're not home when we deliver.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 HomeChef Website By Rajat Kumar Singh. All rights reserved.</p>
+    </footer>
+</body>
+</html>

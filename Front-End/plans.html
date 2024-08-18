@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plans - HomeChef</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background: antiquewhite;
+            padding: 1em;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        nav .logo {
+            margin-right: 20px;
+        }
+
+        nav .logo img {
+            height: 44px;
+            width: 105px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        nav ul li {
+            margin-left: 1em;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2em;
+            background-color: white;
+        }
+
+        .head {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background-color: rgb(233, 226, 226);
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .step {
+            margin-bottom: 2em;
+        }
+
+        .meal-options,
+        .preferences,
+        .plan-selection-wrapper,
+        .example-recipes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .option,
+        .preference,
+        .recipe {
+            background: #f1f1f1;
+            border-radius: 8px;
+            padding: 1em;
+            margin: 0.5em;
+            flex: 1 1 calc(40% - 1em);
+        }
+
+        .meal-options .option {
+            flex: 1 1 calc(20% - 1em);
+        }
+
+        .preferences-and-plan {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .preferences {
+            flex: 1;
+            margin-right: 1em;
+        }
+
+        .plan-selection-wrapper {
+            flex: 1;
+        }
+
+        .plan-selection {
+            background: #f1f1f1;
+            border-radius: 8px;
+            padding: 1em;
+            flex: 1;
+        }
+
+        .order-summary {
+            background: #e9ecef;
+            padding: 1em;
+            border-radius: 8px;
+        }
+
+        .order-summary h3 {
+            margin-top: 0;
+        }
+
+        blockquote {
+            font-style: italic;
+            border-left: 4px solid #007bff;
+            padding-left: 1em;
+            margin: 1em 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #003366;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1em;
+            border-top: 5px solid #ffcc00;
+        }
+
+        .form-group {
+            margin-bottom: 1.5em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .form-group select,
+        .form-group input[type="checkbox"] {
+            width: 100%;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group select {
+            background: #fff;
+        }
+
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5em;
+        }
+
+        .form-group input[type="checkbox"] + label {
+            display: inline-block;
+            margin-right: 1em;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 0.75em 1.5em;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        form button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="./images/HomeChefImg.png" alt="HomeChef Logo"></a>
+            </div>
+            <ul>
+                <li><a href="#plans">Plans</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="#checkout">Checkout</a></li>
+                <li><a href="#choose-meals">Choose Meals</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+
+            <div class='head'>
+                <h1>Personalize Your Meal Subscription</h1>
+                <p>Get excited—your choice of 80+ weekly options is just a few steps away!</p>
+            </div>
+
+            <div class="mainDiv">
+                <div class="step">
+                    <h2>1. Choose a Type of Meal</h2>
+                    <form id="meal-type-form">
+                        <div class="form-group">
+                            <label for="meal-type">Select a meal type:</label>
+                            <select id="meal-type" name="meal-type">
+                                <option value="meal-kits">Meal Kits</option>
+                                <option value="prepared-ready">Prepared & Ready</option>
+                            </select>
+                        </div>
+                        <button type="submit">Next</button>
+                    </form>
+                    <p>Want both? Select Prepared & Ready meals can be added to meal kit orders as Add-ons each week.
+                    </p>
+                </div>
+
+                <div class="preferences-and-plan">
+                    <div class="preferences">
+                        <div class="step">
+                            <h2>2. Choose Your Preferences</h2>
+                            <form id="preferences-form">
+                                <div class="form-group">
+                                    <label>Select Preferences:</label>
+                                    <div>
+                                        <label><input type="checkbox" name="preference" value="chef-favorites"> Chef
+                                            Favorites</label>
+                                        <label><input type="checkbox" name="preference" value="wellness">
+                                            Wellness</label>
+                                        <label><input type="checkbox" name="preference" value="family-friendly"> Family
+                                            Friendly</label>
+                                        <label><input type="checkbox" name="preference" value="fast-easy"> Fast &
+                                            Easy</label>
+                                        <label><input type="checkbox" name="preference" value="veggies"> Veggies</label>
+                                    </div>
+                                </div>
+                                <button type="submit">Next</button>
+                            </form>
+                            <p>The full menu is always available to order from—these just help us personalize your
+                                experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="plan-selection-wrapper">
+                        <div class="step">
+                            <h2>3. Select Your Plan</h2>
+                            <form id="plan-form">
+                                <div class="form-group">
+                                    <label for="meal-servings">Servings per meal:</label>
+                                    <select id="meal-servings" name="meal-servings">
+                                        <option value="2">2</option>
+                                        <option value="4">4</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="meals-per-week">Meals per week:</label>
+                                    <select id="meals-per-week" name="meals-per-week">
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div class="plan-selection">
+                                    <div class="order-summary">
+                                        <h3>Order Summary</h3>
+                                        <p>Price per serving: $11.99</p>
+                                        <p>Shipping: $10.99</p>
+                                        <p>First order subtotal: $58.95</p>
+                                        <p>You can update your preferences and skip, pause, or cancel at any time.</p>
+                                    </div>
+                                </div>
+                                <a href="account.html"><button type="submit">Continue</button></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </main>
+
+    <section id="why-choose" class="why-choose">
+        <h2>Why Choose A HomeChef Meal Kit?</h2>
+        <ul>
+            <li>A more sustainable way to cook - Perfectly portioned ingredients to cut down on food waste in
+                your home.</li>
+            <li>Your plan, your way - Need to skip a week or cancel? No problem.</li>
+            <li>Quality you can taste - Sustainable farming practices, high-quality produce, & unique
+                ingredients.</li>
+        </ul>
+        <blockquote>
+            “HomeChef has been amazing for me because I get to try new delicious dishes and I can still maintain
+            a healthy lifestyle.”
+        </blockquote>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 HomeChef Website By Rajat Kumar Singh. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
