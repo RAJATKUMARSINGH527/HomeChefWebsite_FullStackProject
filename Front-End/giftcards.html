@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Kit Delivery Gifts & Gift Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        .gift-card-section, .cart {
+            flex: 1;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+
+        h2, h3, h4 {
+            color: #333;
+        }
+
+        .gift-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gift-type, .quantity {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .cart p {
+            margin: 10px 0;
+        }
+
+        .cart p:last-child {
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gift-card-section">
+            <h2>Meal Kit Delivery Gifts & Gift Cards</h2>
+            <div class="gift-card">
+                <h3>$140 Meal e-gift card</h3>
+                <p>Recipients can use a Meal E-Gift Card towards any subscription meal plan or Market items</p>
+                <p>E-Gift Cards are subject to our Gift Card Terms</p>
+                <p>Blue Apron Gift Cards never expire and carry no fees</p>
+                <div class="gift-type">
+                    <h4>Gift Type</h4>
+                    <p>Gift Amount</p>
+                    <p>$140 is our most popular option</p>
+                </div>
+                <div class="quantity">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1">
+                </div>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h3>Your Cart (1)</h3>
+            <p>Meal Gifts</p>
+            <p>$140 Meal Gift Card</p>
+            <p>Quantity: 1</p>
+            <p>E-Gift Cards are non-refundable (unless required by law). E-Gift Card may only be used for Meal Subscription or Market items. Your payment card will be charged at the time of purchase. Product and shipping restrictions may apply.</p>
+        </div>
+    </div>
+</body>
+</html>

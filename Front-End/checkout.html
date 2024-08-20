@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .checkout {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-section, .summary-section {
+            width: 48%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea, button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .summary-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .order-details p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        a.track-box {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a.track-box:hover {
+            background-color: #218838;
+        }
+
+        .follow-box {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .checkout {
+                flex-direction: column;
+            }
+
+            .form-section, .summary-section {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <p class="info">You won’t be charged until your first order ships.</p>
+
+        <div class="checkout">
+            <div class="form-section">
+                <h2>Delivery Information</h2>
+                <form>
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" value="Rajat Kumar" required>
+                    
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" value="Singh" required>
+                    
+                    <label for="address-line1">Address Line 1</label>
+                    <input type="text" id="address-line1" name="address-line1" required>
+                    
+                    <label for="address-line2">Address Line 2</label>
+                    <input type="text" id="address-line2" name="address-line2">
+                    
+                    <label for="zip">Zip</label>
+                    <input type="text" id="zip" name="zip" required>
+                    
+                    <label for="state">State</label>
+                    <select id="state" name="state" required>
+                        <option value="AL">AL</option>
+                        <!-- Add other states here -->
+                    </select>
+                    
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                    
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    
+                    <label for="instructions">Special delivery instructions</label>
+                    <textarea id="instructions" name="instructions"></textarea>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="summary-section">
+                <h2>Order Summary</h2>
+                <p>First delivery date: <span>Please enter your ZIP code to see available delivery dates</span></p>
+                <div class="order-details">
+                    <p>Prepared & Ready Plan: <strong>$47.96</strong></p>
+                    <p>4 meals per week: <strong>$11.99 per serving</strong></p>
+                    <p>Shipping: <strong>$10.99</strong></p>
+                    <p>Est. Tax: <strong>TBD</strong></p>
+                    <p>First Order Total: <strong>$58.95</strong></p>
+                    <p>Promised delivery time: <strong>We can guarantee your box will arrive by 8pm</strong></p>
+                </div>
+                <a href="#" class="track-box">Track your box</a>
+                <p class="follow-box">Follow your box to your doorstep</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
