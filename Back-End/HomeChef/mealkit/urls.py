@@ -2,31 +2,21 @@ from django.urls import path
 from .views import *
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
-from rest_framework.permissions import AllowAny
-from drf_yasg.views import get_schema_view as get_swagger_view
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from drf_yasg.views import get_schema_view as get_redoc_view
 
-# Swagger schema view for API documentation
-schema_view = get_swagger_view(
+schema_view = get_schema_view(
     openapi.Info(
         title="HomeChef API",
         default_version='v1',
-        description="API documentation for HomeChef",
+        description="API documentation",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="rajatkumarsingh257@gmail.com"),
+        license=openapi.License(name="BSD License"),
     ),
     public=True,
-    permission_classes=(AllowAny,),
-)
-
-# ReDoc schema view for alternative API documentation
-redoc_view = get_redoc_view(
-    openapi.Info(
-        title="HomeChef API",
-        default_version='v1',
-        description="API documentation for HomeChef",
-    ),
-    public=True,
-    permission_classes=(AllowAny,),
+    permission_classes=[AllowAny],  # Ensure this is a list or tuple
 )
 
 urlpatterns = [
@@ -106,8 +96,6 @@ urlpatterns = [
     # URL pattern for payment detail view
     path('payments/<int:pk>/', PaymentDetailView.as_view(), name='payment-detail'),
 
-    # URL pattern for Swagger UI documentation
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    # URL pattern for ReDoc documentation
-    path('redoc/', redoc_view.with_ui('redoc', cache_timeout=0), name='schema-redoc-ui'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='swagger-schema'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='redoc'),
 ]

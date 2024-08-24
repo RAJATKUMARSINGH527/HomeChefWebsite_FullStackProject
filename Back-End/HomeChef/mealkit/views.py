@@ -13,6 +13,9 @@ from rest_framework.permissions import AllowAny
 from .permissions import IsChef,IsCompany,IsCustomer
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.exceptions import PermissionDenied
+from drf_yasg.utils import swagger_auto_schema 
+from drf_yasg import openapi
+
 
 # Custom Pagination Class
 class CustomPagination(PageNumberPagination):
@@ -45,11 +48,17 @@ class CustomerRegisterView(generics.CreateAPIView):
 class UserLoginView(APIView):
     # Allow any user to access this view
     permission_classes = [AllowAny]
+   
+    @swagger_auto_schema( request_body=LoginSerializer, responses={200: 'Success', 400: 'Invalid Credentials'} )
 
     def post(self, request, *args, **kwargs):
+        serializer=LoginSerializer(data=request.data)
+        
+        serializer.is_valid(raise_exception=True)
+
         # Get username and password from the request data
-        username = request.data.get('username')
-        password = request.data.get('password')
+        username = serializer.data.get('username')
+        password = serializer.data.get('password')
         # Find the user by username
         user = User.objects.filter(username=username).first()
 
